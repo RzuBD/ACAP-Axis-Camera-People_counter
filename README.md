@@ -70,5 +70,6 @@ docker cp $(docker create people-counter):/opt/app ./build
 ssh root@<camera-ip>
 journalctl -f
 
+```
 🎯 Enjoy real-time people counting with your Axis camera!
 Feel free to contribute or report issues in the repository. 🚀
