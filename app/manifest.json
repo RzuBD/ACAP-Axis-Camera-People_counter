@@ -1,0 +1,13 @@
+{
+    "schemaVersion": "1.5.0",
+    "acapPackageConf": {
+        "setup": {
+            "friendlyName": "People Counter",
+            "appName": "people_counter",
+            "vendor": "Axis Communications",
+            "version": "1.0.0",
+            "runMode": "never",
+            "embeddedSdkVersion": "3.0"
+        }
+    }
+}

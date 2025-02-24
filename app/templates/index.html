@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>People Detection</title>
+    <title>Video Streaming Testing</title>
+  </head>
+  <body>
+    <h1>Video Streaming Testing</h1>
+    <div id="count_display">People Count: 0</div>
+
+    <script>
+    function updatePeopleCount() {
+        fetch('/count')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("count_display").innerText = "People Count: " + data.people_count;
+            });
+    }
+    setInterval(updatePeopleCount, 1000); // Update count every second
+    </script>
+
+  </body>
+</html>
