@@ -34,6 +34,7 @@ building-opencv
 
 ---
 
+
 ## ⚙️ Installation & Build Instructions
 
 ### 📌 Prerequisites
@@ -43,6 +44,69 @@ building-opencv
 - 📷 A compatible **Axis camera** (**ARTPEC-8**)  
 
 ---
+
+### Set up for ACAP Native SDK
+1- Open Visual Studio Code and install the Dev Containers extension.
+
+2- Create a subfolder called .devcontainer in the top directory of the source code project you're working on.
+
+3- In .devcontainer, create devcontainer.json with the following content:
+```sh
+{
+    "name": "ACAP Native (aarch64)",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "args": {
+            "ARCH": "aarch64"
+        }
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-vscode.cpptools-extension-pack",
+                "ms-vscode.makefile-tools",
+                "ms-azuretools.vscode-docker"
+            ]
+        }
+    }
+}
+```
+You might need to replace aarch64 with armv7hf as it depends on the device your application targets. 
+4- In .devcontainer, create Dockerfile with the following content:
+```sh
+ARG ARCH
+ARG VERSION=latest
+ARG UBUNTU_VERSION=22.04
+ARG REPO=axisecp
+ARG SDK=acap-native-sdk
+
+FROM ${REPO}/${SDK}:${VERSION}-${ARCH}-ubuntu${UBUNTU_VERSION}
+
+RUN apt-get update
+RUN apt install cppcheck -y
+```
+
+5-Create a new subfolder called .vscode in the top directory of the source code project you're working on.
+
+6- In .vscode, create c_cpp_properties.json file with the following content:
+```sh
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${SDKTARGETSYSROOT}/**"
+            ]
+        }
+    ],
+    "version": 4
+}
+```
+7- In Visual Studio Code, click View > Command Palette... and type Dev Containers: Reopen in Container. This restarts Visual Studio Code, builds the container if it doesn't exist, and then opens the source code in the container. This might take some time the first time you do it.
+
+---
+### You can also build docker image by following the next step: 
 
 ### 🔧 Steps to Build & Deploy
 
