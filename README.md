@@ -50,26 +50,28 @@ building-opencv
 
 ```sh
 docker build --tag people-counter .
+```
 
-#For aarch64 architecture, use:
-
+#### For aarch64 architecture, use:
+```sh
 docker build --tag people-counter --build-arg ARCH=aarch64 .
-# 📦 Extract the .eap package
+```
+#### 📦 Extract the .eap package
 ---
-
+```sh
 docker cp $(docker create people-counter):/opt/app ./build
+```
 
-# ⬆️ Upload the .eap package
+#### ⬆️ Upload the .eap package
+#### Upload the .eap file from the build/ folder to your Axis camera via ACAP.
 
-# Upload the .eap file from the build/ folder to your Axis camera via the web interface or API.
+## ▶️ Start the application on the camera
 
-# ▶️ Start the application on the camera
-
-#To monitor logs, run:
-
+# To monitor logs, run:
+```sh
 ssh root@<camera-ip>
 journalctl -f
-
 ```
-🎯 Enjoy real-time people counting with your Axis camera!
-Feel free to contribute or report issues in the repository. 🚀
+
+# 🎯 Enjoy real-time people counting with your Axis camera!
+# Feel free to contribute or report issues in the repository. 🚀
