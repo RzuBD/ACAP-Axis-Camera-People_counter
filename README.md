@@ -57,15 +57,15 @@ docker build --tag people-counter --build-arg ARCH=aarch64 .
 # 📦 Extract the .eap package
 ---
 
-```sh
 docker cp $(docker create people-counter):/opt/app ./build
 
-#⬆️ Upload the .eap package
+# ⬆️ Upload the .eap package
 
-Upload the .eap file from the build/ folder to your Axis camera via the web interface or API.
+# Upload the .eap file from the build/ folder to your Axis camera via the web interface or API.
 
 # ▶️ Start the application on the camera
-To monitor logs, run:
+
+#To monitor logs, run:
 
 ssh root@<camera-ip>
 journalctl -f
