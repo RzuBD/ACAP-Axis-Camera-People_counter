@@ -16,10 +16,9 @@ The goal is to **count people** in a scene while handling variations in movement
 - ✅ Packaged as an **.eap application**
 
 ---
-
 ## 📁 Project Structure
 
-
+```bash
 Counter1/
 │── app/
 │   ├── people_counter.cpp  # Main C++ application
@@ -29,8 +28,6 @@ Counter1/
 │── README.md               # Documentation
 │── build/                  # Output folder for the .eap package
 │── assets/                 # Additional assets if needed
-building-opencv
-
 
 ---
 
