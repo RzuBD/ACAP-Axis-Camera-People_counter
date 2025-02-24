@@ -12,7 +12,7 @@ The goal is to **count people** in a scene while handling variations in movement
 
 - ✅ Developed in **C++**
 - ✅ Uses **OpenCV** for image processing
-- ✅ Designed for **Axis ARTPEC-8 cameras**
+- ✅ Designed for **Axis ARTPEC-8 cameras, aarch64**
 - ✅ Packaged as an **.eap application**
 
 ---
