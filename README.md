@@ -21,12 +21,13 @@ The goal is to **count people** in a scene while handling variations in movement
 ```bash
 Counter1/
 │── app/
-│   ├── people_counter.cpp  # Main C++ application
+|   ├── LICENSE             # License is needed
 │   ├── Makefile            # Build instructions
+│   ├── people_counter.cpp  # Main C++ application
 │   ├── manifest.json       # ACAP execution configuration
 │── Dockerfile              # Container build instructions
 │── README.md               # Documentation
-│── build/                  # Output folder for the .eap package
+│── build/                  # Output folder for the .eap package 
 │── assets/                 # Additional assets if needed
 ```
 ---
